@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogOfEmployees", "CatalogOfEmployees\CatalogOfEmployees.csproj", "{DDE351F2-88FD-4204-B323-260038391701}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogOfEmployees.Domain", "CatalogOfEmployees.Domain\CatalogOfEmployees.Domain.csproj", "{D1759E1B-C8B8-48C2-8BDF-1F6EB2133E35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogOfEmployees.Domain.Ef", "CatalogOfEmployees.Domain.Ef\CatalogOfEmployees.Domain.Ef.csproj", "{7925A9DC-CC71-4438-8C89-9D3028545600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogOfEmployees.BusinessLogic.Domain", "CatalogOfEmployees.BusinessLogic.Domain\CatalogOfEmployees.BusinessLogic.Domain.csproj", "{261DFD6D-937B-4A38-98DF-8BA01D064A6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogOfEmployees.BusinessLogic", "CatalogOfEmployees.BusinessLogic\CatalogOfEmployees.BusinessLogic.csproj", "{664DB82B-DFEC-4F34-B367-FB0D74FA02DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDE351F2-88FD-4204-B323-260038391701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE351F2-88FD-4204-B323-260038391701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE351F2-88FD-4204-B323-260038391701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE351F2-88FD-4204-B323-260038391701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1759E1B-C8B8-48C2-8BDF-1F6EB2133E35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1759E1B-C8B8-48C2-8BDF-1F6EB2133E35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1759E1B-C8B8-48C2-8BDF-1F6EB2133E35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1759E1B-C8B8-48C2-8BDF-1F6EB2133E35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7925A9DC-CC71-4438-8C89-9D3028545600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7925A9DC-CC71-4438-8C89-9D3028545600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7925A9DC-CC71-4438-8C89-9D3028545600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7925A9DC-CC71-4438-8C89-9D3028545600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{261DFD6D-937B-4A38-98DF-8BA01D064A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261DFD6D-937B-4A38-98DF-8BA01D064A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261DFD6D-937B-4A38-98DF-8BA01D064A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261DFD6D-937B-4A38-98DF-8BA01D064A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664DB82B-DFEC-4F34-B367-FB0D74FA02DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664DB82B-DFEC-4F34-B367-FB0D74FA02DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664DB82B-DFEC-4F34-B367-FB0D74FA02DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664DB82B-DFEC-4F34-B367-FB0D74FA02DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2591A11-8C85-4B13-BC4B-6C92FA53F0D4}
+	EndGlobalSection
+EndGlobal

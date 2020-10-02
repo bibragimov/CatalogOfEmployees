@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="content-section implementation">
+        <div class="card">
+            <p-table #dt [value]="employees" [rows]="10" [paginator]="true"
+                [globalFilterFields]="['id','firstName', 'lastName', 'middleName', 'mobilePhone','email', 'state']"
+                [rowHover]="true" dataKey="id" selectionMode="single" (onRowSelect)="onRowSelect($event)">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        <h2 class="p-m-0">Сотрудники</h2>
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon"><i class="pi pi-search"></i></span>
+                            <input type="text" pInputText placeholder="Поиск..."
+                                (input)="dt.filterGlobal($event.target.value, 'contains')">
+                            <button pButton pRipple label="Добавить сотрудника" icon="pi pi-plus"
+                                class="p-button-success p-mr-2" (click)="openNew()"></button>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="id"># <p-sortIcon field="id"></p-sortIcon>
+                        </th>
+                        <th>Фото</th>
+                        <th pSortableColumn="firstName">Имя <p-sortIcon field="firstName"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="lastName">Фамилия <p-sortIcon field="lastName"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="middleName">Отчество <p-sortIcon field="middleName"></p-sortIcon>
+                        </th>
+                        <th>Номер телефона</th>
+                        <th pSortableColumn="email">Почта <p-sortIcon field="email"></p-sortIcon>
+                        </th>
+                        <th>Должность</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>
+                            <p-multiSelect [options]="statesList" defaultLabel="Все"
+                                (onChange)="dt.filter($event.value, 'state', 'in')"></p-multiSelect>
+                        </th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-employee>
+                    <tr [pSelectableRow]="employee">
+                        <td>{{employee.id}}</td>
+                        <td><img src="https://via.placeholder.com/100" alt="фото" width="100" class="p-shadow-4" /></td>
+                        <td>{{employee.firstName}}</td>
+                        <td>{{employee.lastName}}</td>
+                        <td>{{employee.middleName}}</td>
+                        <td>{{employee.mobilePhone}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.state}}</td>
+                        <td>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                                (click)="delete(employee)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+    <p-dialog header="Карточка струдника" [(visible)]="employeeDialog" [focusOnShow]="true" showEffect="fade"
+        [modal]="true" [style]="{width: '300px'}" [closable]="true" (onHide)="hideDialog()">
+        <div class="p-grid ui-fluid" *ngIf="employee">
+            <div class="p-col-4">
+                <label for="firstName">Имя:</label>
+            </div>
+            <div class="p-col-8">
+                <input pInputText id="firstName" [(ngModel)]="employee.firstName" />
+            </div>
+            <div class="p-col-4">
+                <label for="lastName">Фамилия:</label>
+            </div>
+            <div class="p-col-8">
+                <input pInputText id="lastName" [(ngModel)]="employee.lastName" />
+            </div>
+            <div class="p-col-4">
+                <label for="middleName">Отчество:</label>
+            </div>
+            <div class="p-col-8">
+                <input pInputText id="middleName" [(ngModel)]="employee.middleName" />
+            </div>
+            <div class="p-col-4">
+                <label for="mobilePhone">Номер телефона:</label>
+            </div>
+            <div class="p-col-8">
+                <p-inputMask [(ngModel)]="employee.mobilePhone" mask="+7(999) 999-9999" placeholder="Введите номер">
+                </p-inputMask>
+            </div>
+            <div class="p-col-4">
+                <label for="email">Эл. почта:</label>
+            </div>
+            <div class="p-col-8">
+                <input pInputText id="email" [(ngModel)]="employee.email" placeholder="example@domain.com" />
+            </div>
+            <div class="p-col-4">
+                <label for="state">Должность:</label>
+            </div>
+            <div class="p-col-8">
+                <input pInputText id="state" [(ngModel)]="employee.state" />
+            </div>
+        </div>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                <button pButton pRipple label="Сохранить" icon="pi pi-check" class="p-button-text"
+                    (click)="save()"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
+</div>
